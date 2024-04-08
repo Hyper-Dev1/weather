@@ -1,0 +1,257 @@
+$bgGray:#E9E9ED;
+$bgGrayHover:#DDDDE3;
+$gray:#919197;
+$primary:#129FF8;
+
+main {
+    height: 91vh;
+    width: 96%;
+    // border: 1px black solid;
+    padding: 2%;
+    display: flex;
+    justify-content: space-between;
+
+    .sideBar {
+        padding: 1rem;
+        width: 25%;
+
+        .search {
+            // height: 20rem;
+            // border: 1px black solid;
+            position: relative;
+
+            .bar-img {
+                width: 2.2rem;
+            }
+
+            .searchBar {
+                background-color: $bgGray;
+                border-radius: 1rem;
+                display: flex;
+                width: 30rem;
+                // border: 1px black solid;
+                padding: 0.5rem 1rem;
+
+                input {
+                    width: 26rem;
+                    padding: 0 1rem;
+                    font-weight: 600;
+                }
+
+                button {
+                    img {
+                        rotate: 45deg;
+                    }
+                }
+
+            }
+
+            .searchSuggestion {
+                display: none;
+                margin: 1rem 0 0 0;
+                position: absolute;
+                width: 32rem;
+                top: 3rem;
+
+                .searchSuggestionItem {
+                    margin: 0.5rem 0;
+
+                    button {
+                        background-color: $bgGray;
+                        border-radius: 1rem;
+                        padding: 0.8rem 1rem 0.5rem 1rem;
+                        display: flex;
+                        justify-content: flex-start;
+                        height: 4rem;
+                        width: 100%;
+                        font-weight: 500;
+                        text-align: center;
+                        transition: 200ms ease-in-out;
+
+                        &:hover {
+                            background-color: $bgGrayHover;
+                            font-weight: 600;
+                        }
+                    }
+                }
+            }
+        }
+
+        .randomizer {
+            width: 32rem;
+            height: 3.8rem;
+            background-color: $primary;
+            border-radius: 1rem;
+            font-weight: 500;
+            margin: 1rem 0;
+            color: white;
+        }
+
+        .todayWeather {
+            img {
+                display: none;
+
+            }
+
+            h2 {
+                font-size: 7.2rem;
+                font-weight: 400;
+                position: relative;
+                margin: 0;
+
+                span {
+                    font-size: 4.8rem;
+                    position: absolute;
+                    top: 0;
+                }
+            }
+
+            h3 {
+                font-size: 2.4rem;
+                font-weight: 500;
+                margin: 0;
+
+                span {
+                    color: $gray;
+                }
+            }
+
+            p {
+                font-size: 1.6rem;
+                font-weight: 600;
+            }
+        }
+
+        .weatherLocation {
+            border: 1px black solid;
+            height: 10rem;
+            border-radius: 1rem;
+            position: relative;
+            background-size: cover;
+
+            h2 {
+                position: absolute;
+                top: 3.2rem;
+                width: 100%;
+                text-align: center;
+                font-size: 1.6rem;
+                font-weight: 600;
+            }
+        }
+    }
+
+    .mainHighlights {
+        padding: 1rem;
+        width: 75%;
+        background-color: #f0f4f7;
+        border-radius: 0 2rem 2rem 0;
+
+        .hrNav {
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+
+            .degBtn {
+                button {
+                    height: 3rem;
+                    width: 3rem;
+                    border-radius: 50%;
+                    margin: 0 0.2rem;
+                    border: 0.19rem #252627 solid;
+                    font-size: 1.6rem;
+                    font-weight: 600;
+                    text-align: center;
+
+                    &:hover {
+                        background-color: #252627;
+                        color: white;
+                    }
+                }
+            }
+        }
+
+        .cardCont {
+            // border: 1px black solid;
+            margin: 2rem 0 0 0;
+            height: 12rem;
+            display: flex;
+
+            .cardItem {
+                // border: 1px black solid;
+                width: 11rem;
+                height: 12rem;
+                border-radius: 1rem;
+                margin: 0 0.5rem;
+                // padding: 2rem 0;
+                background-color: white;
+
+                p {
+                    font-size: 1.6rem;
+                    font-weight: 600;
+                    text-align: center;
+                    margin: 0;
+                    padding: 1rem 0;
+                }
+
+                .cardDeg {
+                    display: flex;
+                    justify-content: center;
+                }
+
+            }
+        }
+
+        .highlight {
+
+            .highlightTitle {
+                margin: 1rem 0 0 2rem;
+
+            }
+
+            h2 {
+                font-size: 2.4rem;
+                font-weight: 600;
+                margin: 0;
+            }
+
+            .highlightGrid {
+                margin: 1rem 0 0 1rem;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 2rem;
+
+                .gridItem {
+                    width: 29rem;
+                    height: 15rem;
+                    background-color: white;
+                    border-radius: 1rem;
+                    padding: 1rem 0 0 0.5rem;
+                    // border: 1px black solid;
+
+                    h3 {
+                        font-size: 1.6rem;
+                        font-weight: 500;
+                        color: $gray;
+                        margin: 0 0 0 1rem;
+                    }
+
+                    h2 {
+                        font-size: 4.8rem;
+                        font-weight: 500;
+                        text-align: center;
+                        margin: 1.5rem 0;
+
+                        span {
+                            font-size: 2.4rem;
+                        }
+                    }
+
+                    p {
+                        font-size: 1.6rem;
+                        margin: 0 0 0 1rem;
+                    }
+                }
+            }
+        }
+    }
+}
