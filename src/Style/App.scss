@@ -16,8 +16,6 @@ main {
         width: 25%;
 
         .search {
-            // height: 20rem;
-            // border: 1px black solid;
             position: relative;
 
             .bar-img {
@@ -32,9 +30,10 @@ main {
                 // border: 1px black solid;
                 padding: 0.5rem 1rem;
 
+
                 input {
-                    width: 26rem;
-                    padding: 0 1rem;
+                    width: 25rem;
+                    padding: 0 0 0 1rem;
                     font-weight: 600;
                 }
 
@@ -47,11 +46,14 @@ main {
             }
 
             .searchSuggestion {
-                display: none;
+                // display: none;
+                z-index: 99;
                 margin: 1rem 0 0 0;
                 position: absolute;
                 width: 32rem;
                 top: 3rem;
+                background-color: white;
+                // border: 1px black solid;
 
                 .searchSuggestionItem {
                     margin: 0.5rem 0;
@@ -88,8 +90,13 @@ main {
         }
 
         .todayWeather {
-            img {
-                display: none;
+            .imgTodayWeather {
+                text-align: center;
+
+                img {
+                    height: 15rem;
+                    text-align: center;
+                }
 
             }
 
@@ -119,11 +126,26 @@ main {
             p {
                 font-size: 1.6rem;
                 font-weight: 600;
+                margin: 0;
+                padding: 0.5rem 0;
+            }
+
+            .descImg {
+                display: flex;
+                background-size: contain;
+                height: 3rem;
+                padding: 1rem 0;
+
+                img {
+                    height: 3rem;
+                    object-fit: cover;
+                    margin: 0 2rem 0 0;
+                }
             }
         }
 
         .weatherLocation {
-            border: 1px black solid;
+            // border: 1px black solid;
             height: 10rem;
             border-radius: 1rem;
             position: relative;
@@ -134,15 +156,23 @@ main {
                 top: 3.2rem;
                 width: 100%;
                 text-align: center;
-                font-size: 1.6rem;
+                font-size: 2.4rem;
                 font-weight: 600;
+                color: white;
+            }
+
+            img {
+                object-fit: cover;
+                height: 100%;
+                width: 100%;
+                border-radius: 1rem;
             }
         }
     }
 
     .mainHighlights {
         padding: 1rem;
-        width: 75%;
+        width: 72%;
         background-color: #f0f4f7;
         border-radius: 0 2rem 2rem 0;
 
@@ -171,35 +201,40 @@ main {
         }
 
         .cardCont {
-            // border: 1px black solid;
             margin: 2rem 0 0 0;
-            height: 12rem;
+            height: 15rem;
             display: flex;
+            overflow-x: auto;
+            overflow-y: hidden;
+            white-space: nowrap;
+        }
 
-            .cardItem {
-                // border: 1px black solid;
-                width: 11rem;
-                height: 12rem;
-                border-radius: 1rem;
-                margin: 0 0.5rem;
-                // padding: 2rem 0;
-                background-color: white;
+        .cardItem {
+            width: 10.5rem;
+            height: 12rem;
+            border-radius: 1rem;
+            margin: 0 0.5rem;
+            background-color: white;
+            text-align: center;
+            flex-shrink: 0;
 
-                p {
-                    font-size: 1.6rem;
-                    font-weight: 600;
-                    text-align: center;
-                    margin: 0;
-                    padding: 1rem 0;
-                }
+            p {
+                font-size: 1.6rem;
+                font-weight: 600;
+                margin: 0;
+                padding: 1rem 0;
+            }
 
-                .cardDeg {
-                    display: flex;
-                    justify-content: center;
-                }
+            .cardDeg {
+                display: flex;
+                justify-content: center;
+            }
 
+            img {
+                height: 4rem;
             }
         }
+
 
         .highlight {
 
@@ -221,7 +256,7 @@ main {
                 gap: 2rem;
 
                 .gridItem {
-                    width: 29rem;
+                    width: 28rem;
                     height: 15rem;
                     background-color: white;
                     border-radius: 1rem;
@@ -249,6 +284,25 @@ main {
                     p {
                         font-size: 1.6rem;
                         margin: 0 0 0 1rem;
+                    }
+
+                    .SunSet {
+                        margin: 2rem 0 0 1rem;
+
+                        .miniCard {
+                            display: flex;
+                            // justify-content: center;
+
+                            img {
+                                height: 4.8rem;
+                            }
+
+                            p {
+                                margin: 1rem 0 1rem 1rem;
+                                font-size: 2rem;
+                                font-weight: 500;
+                            }
+                        }
                     }
                 }
             }
