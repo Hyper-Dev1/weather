@@ -3,12 +3,11 @@ import { createSlice } from "@reduxjs/toolkit"
 export const locationSlice = createSlice({
   name: "location",
   initialState: {
-    value: "", // Update to "value" to match the state structure
+    value: "kathmandu", 
   },
   reducers: {
     setLocation: (state, action) => {
       state.value = action.payload.id
-      console.log(state.value)
     },
   },
 })
