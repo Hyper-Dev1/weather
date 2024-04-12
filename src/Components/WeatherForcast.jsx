@@ -1,12 +1,21 @@
 import { useEffect, useState } from "react"
 import { useSelector } from "react-redux"
 import axios from "axios"
+import { Swiper, SwiperSlide } from "swiper/react"
+import "swiper/css" // Import Swiper CSS
+import "swiper/css/navigation" // Import Swiper Navigation CSS
+import "swiper/css/pagination" // Import Swiper Pagination CSS
+import "swiper/css/scrollbar" // Import Swiper Scrollbar CSS
+import SwiperCore from "swiper"
+import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules"
 import Carditem from "./Carditem"
 
-const WeatherForcast = () => {
+SwiperCore.use([Navigation, Pagination, Scrollbar, A11y])
+
+const HourlyForecastSwiper = () => {
   const location = useSelector((state) => state.location.value)
   const [weatherData, setWeatherData] = useState(null)
-  const [temperatureUnit, setTemperatureUnit] = useState("C") 
+  const [temperatureUnit, setTemperatureUnit] = useState("C")
 
   useEffect(() => {
     const fetchWeatherData = async () => {
@@ -31,7 +40,28 @@ const WeatherForcast = () => {
   }
 
   if (!weatherData) {
-    return <div>Loading...</div>
+  return (
+    <>
+      <div className="loading">
+        <div className="hrNavL">
+          <div className="degBtnL">
+            <button></button>
+            <button></button>
+          </div>
+        </div>
+        <div className="cardContL">
+          <div className="cardItemL"></div>
+          <div className="cardItemL"></div>
+          <div className="cardItemL"></div>
+          <div className="cardItemL"></div>
+          <div className="cardItemL"></div>
+          <div className="cardItemL"></div>
+          <div className="cardItemL"></div>
+          <div className="cardItemL"></div>
+        </div>
+      </div>
+    </>
+  )
   }
 
   return (
@@ -61,23 +91,46 @@ const WeatherForcast = () => {
         </div>
       </div>
       <div className="cardCont">
-        {weatherData.map((item, index) => (
-          <Carditem
-            key={index}
-            time={item.time}
-            temperature={temperatureUnit === "C" ? item.temp_c : item.temp_f}
-            temperatureFeel={
-              temperatureUnit === "C" ? item.feelslike_c : item.feelslike_f
-            }
-            iconSrc={`./Assets/Icons/${item.is_day}/${item.condition.code}.svg`}
-            unit={temperatureUnit}
-          />
-        ))}
+        <Swiper
+          spaceBetween={30}
+          slidesPerView={8.3}
+          breakpoints={{
+            640: {
+              slidesPerView: 2,
+              spaceBetween: 20,
+            },
+            768: {
+              slidesPerView: 8.3,
+              spaceBetween: 30,
+            },
+            1024: {
+              slidesPerView: 8.3,
+              spaceBetween: 30,
+            },
+          }}
+          // navigation
+          // pagination={{ clickable: true }}
+          scrollbar={{ draggable: true }}
+        >
+          {weatherData.map((item, index) => (
+            <SwiperSlide key={index}>
+              <Carditem
+                time={item.time}
+                temperature={
+                  temperatureUnit === "C" ? item.temp_c : item.temp_f
+                }
+                temperatureFeel={
+                  temperatureUnit === "C" ? item.feelslike_c : item.feelslike_f
+                }
+                iconSrc={`./Assets/Icons/${item.is_day}/${item.condition.code}.svg`}
+                unit={temperatureUnit}
+              />
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </div>
     </>
   )
 }
 
-export default WeatherForcast
-
-
+export default HourlyForecastSwiper

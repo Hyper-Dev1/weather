@@ -94,7 +94,21 @@ const Highlight = () => {
   }, [location])
 
   if (!weatherData) {
-    return <div>Loading...</div>
+    return (
+      <div className="loading">
+        <div className="highlightL">
+          <h2 className="highlightTitleL">Today Highlight</h2>
+          <div className="highlightGridL">
+            <div className="gridItemL"></div>
+            <div className="gridItemL"></div>
+            <div className="gridItemL"></div>
+            <div className="gridItemL"></div>
+            <div className="gridItemL"></div>
+            <div className="gridItemL"></div>
+          </div>
+        </div>
+      </div>
+    )
   }
 
   return (
@@ -104,8 +118,8 @@ const Highlight = () => {
         <div className="gridItem">
           <h3>UV Index</h3>
           <h2>{weatherData.current.uv}</h2>
-          {/* <div className="circularChart"></div> 
-          */}
+          {/* <div className="circularChart"></div>
+           */}
           <p>{getUVIndexCategory(weatherData.current.uv)}</p>
         </div>
         <div className="gridItem">

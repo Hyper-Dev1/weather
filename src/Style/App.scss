@@ -199,13 +199,13 @@ main {
 
                     p {
                         display: inline-block;
-                        width: 3.8rem;
-                        height: 2rem;
+                        width: 2.8rem;
+                        height: 2.4rem;
                         text-align: center;
                         border: 0.1px black solid;
                         font-size: 1.6rem;
                         font-weight: 600;
-                        padding: 0.9rem 0;
+                        padding: 0.3rem 0 0 0;
                         border-radius: 50%;
                         margin: 0;
                     }
@@ -243,47 +243,49 @@ main {
     }
 
     .cardCont {
-        margin: 2rem 0 0 0;
+        margin: 1rem 0 0 0;
         height: 15rem;
         display: flex;
         overflow-x: auto;
         overflow-y: hidden;
         white-space: nowrap;
-    }
 
-    .cardItem {
-        width: 10.5rem;
-        height: 12rem;
-        border-radius: 1rem;
-        margin: 0 0.5rem;
-        background-color: white;
-        text-align: center;
-        flex-shrink: 0;
-
-        p {
-            font-size: 1.6rem;
-            font-weight: 600;
-            margin: 0;
-            padding: 1rem 0;
-        }
-
-        .cardDeg {
-            display: flex;
-            justify-content: center;
+        .cardItem {
+            width: 10.5rem;
+            height: 12rem;
+            border-radius: 1rem;
+            margin: 0 0.5rem;
+            background-color: white;
+            text-align: center;
+            flex-shrink: 0;
+            user-select: none;
 
             p {
-                margin: 0 0 0 0.8rem;
+                font-size: 1.6rem;
+                font-weight: 600;
+                margin: 0;
+                padding: 1rem 0;
+            }
 
-                &:nth-child(2) {
-                    color: $gray;
+            .cardDeg {
+                display: flex;
+                justify-content: center;
+
+                p {
+                    margin: 0 0 0 0.8rem;
+
+                    &:nth-child(2) {
+                        color: $gray;
+                    }
                 }
             }
-        }
 
-        img {
-            height: 4rem;
+            img {
+                height: 4rem;
+            }
         }
     }
+
 
 
     .highlight {
@@ -357,6 +359,71 @@ main {
                     }
                 }
             }
+        }
+    }
+}
+
+.loading {
+    .degBtnL {
+        display: flex;
+        justify-content: end;
+
+        button {
+            height: 3rem;
+            width: 3rem;
+            border-radius: 50%;
+            margin: 0 0.5rem;
+            background-color: $bgGrayHover;
+            border: 0;
+            outline: 0;
+            cursor: default;
+        }
+    }
+
+    .cardContL {
+        display: flex;
+        margin: 1rem 0 0 0;
+
+        .cardItemL {
+            height: 15rem;
+            width: 12rem;
+            border-radius: 0.5rem;
+            background-color: $bgGrayHover;
+            margin: 0 0.5rem;
+        }
+    }
+
+    .highlightL {
+        h2 {
+            font-size: 2.4rem;
+        }
+
+        .highlightGridL {
+            margin: 1rem 0 0 1rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+
+            .gridItemL {
+                width: 28rem;
+                height: 15rem;
+                background-color: $bgGrayHover;
+                border-radius: 1rem;
+                padding: 1rem 0 0 0.5rem;
+            }
+        }
+    }
+    .todayWeatherL{
+        .imgTodayWeatherL{
+            background-color: $bgGrayHover;
+            height: 15rem;
+            width: 50%;
+            margin: auto;
+        }
+        .weatherDescL{
+            margin: 2rem 0;
+            background-color: $bgGrayHover;
+            height: 10rem;
         }
     }
 }

@@ -63,7 +63,16 @@ const TodayWeather = () => {
   }, [location])
 
   if (!weatherData) {
-    return <div>Loading...</div>
+  return (
+    <div className="loading">
+      <div className="todayWeatherL">
+        <div className="imgTodayWeatherL"></div>
+        <div className="weatherDescL"></div>
+        <hr />
+        <div className="weatherDescL"></div>
+      </div>
+    </div>
+  )
   }
 
   return (
@@ -90,7 +99,10 @@ const TodayWeather = () => {
         </div>
         <div className="descImg">
           <img src="./Assets/rain.svg" alt="Cloud" />
-          <p>Rain - {weatherData.forecast.forecastday[0].day.daily_chance_of_rain}%</p>
+          <p>
+            Rain -{" "}
+            {weatherData.forecast.forecastday[0].day.daily_chance_of_rain}%
+          </p>
         </div>
       </div>
       <div className="weatherLocation">

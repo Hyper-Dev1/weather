@@ -1,20 +1,22 @@
 import axios from "axios"
 import { debounce } from "lodash"
-import { useState } from "react"
+import { useState, useRef } from "react"
 import { useDispatch } from "react-redux"
 import { setLocation } from "../State/Weatherslice"
+import LoadingBar from "react-top-loading-bar"
 
 const Search = () => {
   const [query, setQuery] = useState("")
   const [results, setResults] = useState([])
-  const [showSuggestions, setShowSuggestions] = useState(false) // State to manage the visibility of suggestions
+  const [showSuggestions, setShowSuggestions] = useState(false)
   const dispatch = useDispatch()
+  const loadingBarRef = useRef(null)
 
   const search = async (searchQuery) => {
     try {
       if (searchQuery.trim() === "") {
         setResults([])
-        setShowSuggestions(false) // Hide suggestions when query is empty
+        setShowSuggestions(false)
         return
       }
 
@@ -22,7 +24,7 @@ const Search = () => {
         `http://api.weatherapi.com/v1/search.json?key=4a7fb94ad0db4a7eb7372029230712&q=${searchQuery}`
       )
       setResults(response.data)
-      setShowSuggestions(true) // Show suggestions when there are results
+      setShowSuggestions(true)
     } catch (error) {
       console.log("Error fetching data")
     }
@@ -36,15 +38,18 @@ const Search = () => {
     debouncedSearch(value)
   }
 
-  const handleSuggestionClick = (id) => () => {
-    dispatch(setLocation({ id })) // Pass the ID as an object
-    console.log("clicked")
+  const handleSuggestionClick = (id, country) => () => {
+    loadingBarRef.current.staticStart()
+    dispatch(setLocation({ id }))
+    loadingBarRef.current.complete()
+    setShowSuggestions(false)
+    setQuery(id + "," + country)
   }
 
   const handleReset = () => {
     setQuery("")
     setResults([])
-    setShowSuggestions(false) // Hide suggestions when resetting
+    setShowSuggestions(false)
   }
 
   return (
@@ -73,12 +78,14 @@ const Search = () => {
         {results.map((item) => (
           <div className="searchSuggestionItem" key={item.id}>
             {/* Use an arrow function to pass a callback */}
-            <button onClick={handleSuggestionClick(item.name)}>
+            <button onClick={handleSuggestionClick(item.name, item.country)}>
               {item.name}, {item.country}
             </button>
           </div>
         ))}
       </div>
+      {/* Loading bar component */}
+      <LoadingBar color="#129FF8" ref={loadingBarRef} />
     </div>
   )
 }

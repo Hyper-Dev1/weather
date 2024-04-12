@@ -8,6 +8,7 @@ export const locationSlice = createSlice({
   reducers: {
     setLocation: (state, action) => {
       state.value = action.payload.id
+      console.log(state.value)
     },
   },
 })
