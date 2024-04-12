@@ -100,11 +100,11 @@ const HourlyForecastSwiper = () => {
               spaceBetween: 20,
             },
             768: {
-              slidesPerView: 2,
+              slidesPerView: 8.1,
               spaceBetween: 30,
             },
             1024: {
-              slidesPerView: 2,
+              slidesPerView: 8.1,
               spaceBetween: 30,
             },
           }}
