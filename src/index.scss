@@ -4,18 +4,54 @@
     font-family: "Quicksand", sans-serif;
     font-size: 62.5%;
 }
-body{
+
+body {
     margin: 0;
 }
-input , button{
+
+input,
+button {
     background-color: transparent;
     border: 0;
     outline: 0;
     font-family: "Quicksand", sans-serif;
     font-size: 1.6rem;
 }
-button{
+
+button {
     cursor: pointer;
     padding: 0;
     margin: 0;
+}
+
+@media only screen and (max-width: 1365px) {
+
+    // Adjust styles for screens up to 1365px wide
+
+}
+
+@media only screen and (max-width: 768px) {
+    // Adjust styles for screens up to 768px wide (e.g., tablets)
+
+}
+
+@media only screen and (max-width: 480px) {
+    // Adjust styles for screens up to 480px wide (e.g., smartphones)
+
+}
+
+@media only screen and (min-width: 1366px) and (max-width: 1920px) {
+    // Adjust styles for screens between 1366px and 1920px wide (e.g., 1080p monitors)
+
+}
+
+@media only screen and (min-width: 1921px) and (max-width: 2560px) {
+    // Adjust styles for screens between 1921px and 2560px wide (e.g., 1440p monitors)
+
+}
+
+@media only screen and (min-width: 2561px) {
+    // Adjust styles for screens larger than 2560px wide (e.g., 4K monitors)
+
+
 }

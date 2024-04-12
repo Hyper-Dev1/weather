@@ -93,18 +93,18 @@ const HourlyForecastSwiper = () => {
       <div className="cardCont">
         <Swiper
           spaceBetween={30}
-          slidesPerView={8.3}
+          slidesPerView={8.1}
           breakpoints={{
             640: {
               slidesPerView: 2,
               spaceBetween: 20,
             },
             768: {
-              slidesPerView: 8.3,
+              slidesPerView: 2,
               spaceBetween: 30,
             },
             1024: {
-              slidesPerView: 8.3,
+              slidesPerView: 2,
               spaceBetween: 30,
             },
           }}

@@ -4,6 +4,7 @@ import Search from "./Components/Search"
 import TodayWeather from "./Components/TodayWeather"
 import WeatherForcast from "./Components/WeatherForcast"
 import "./Style/App.scss"
+// import "./Style/Responsive.scss"
 
 const App = () => {
   return (

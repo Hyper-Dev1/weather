@@ -9,11 +9,11 @@ main {
     // border: 1px black solid;
     padding: 2%;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
 
     .sideBar {
         padding: 1rem;
-        width: 25%;
+        width: 95%;
 
         .search {
             position: relative;
@@ -26,13 +26,13 @@ main {
                 background-color: $bgGray;
                 border-radius: 1rem;
                 display: flex;
-                width: 30rem;
+                width: 35rem;
                 // border: 1px black solid;
                 padding: 0.5rem 1rem;
 
 
                 input {
-                    width: 25rem;
+                    width: 30rem;
                     padding: 0 0 0 1rem;
                     font-weight: 600;
                 }
@@ -50,7 +50,7 @@ main {
                 z-index: 99;
                 margin: 1rem 0 0 0;
                 position: absolute;
-                width: 32rem;
+                width: 37rem;
                 top: 3rem;
                 background-color: white;
                 // border: 1px black solid;
@@ -80,7 +80,7 @@ main {
         }
 
         .randomizer {
-            width: 32rem;
+            width: 37rem;
             height: 3.8rem;
             background-color: $primary;
             border-radius: 1rem;
@@ -94,7 +94,7 @@ main {
                 text-align: center;
 
                 img {
-                    height: 15rem;
+                    height: 18rem;
                     text-align: center;
                 }
 
@@ -183,7 +183,7 @@ main {
 
     .mainHighlights {
         padding: 1rem;
-        width: 72%;
+        width: 95%;
         background-color: #e8eff5;
         border-radius: 0 2rem 2rem 0;
 
@@ -430,46 +430,3 @@ main {
     }
 }
 
-@media only screen and (max-width: 1365px) {
-
-    .main {
-        display: flex;
-        justify-content: space-between;
-    }
-
-}
-
-@media only screen and (max-width: 768px) {
-    .main {
-        display: flex;
-        justify-content: space-between;
-    }
-
-    // Adjust styles for screens up to 768px wide (e.g., tablets)
-
-}
-
-@media only screen and (max-width: 480px) {
-
-    .main {
-        // display: flex;
-        flex-direction: column;
-    }
-
-}
-
-@media only screen and (min-width: 1366px) and (max-width: 1920px) {
-    // Adjust styles for screens between 1366px and 1920px wide (e.g., 1080p monitors)
-
-}
-
-@media only screen and (min-width: 1921px) and (max-width: 2560px) {
-    // Adjust styles for screens between 1921px and 2560px wide (e.g., 1440p monitors)
-
-}
-
-@media only screen and (min-width: 2561px) {
-    // Adjust styles for screens larger than 2560px wide (e.g., 4K monitors)
-
-
-}
