@@ -9,6 +9,8 @@ import "swiper/css/scrollbar"
 import SwiperCore from "swiper"
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules"
 import Carditem from "./Carditem"
+import React from "react"
+
 
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y])
 

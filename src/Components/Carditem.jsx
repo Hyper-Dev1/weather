@@ -1,4 +1,6 @@
 import PropTypes from "prop-types" // Import PropTypes
+import React from "react"
+
 
 const Carditem = ({ time, iconSrc, temperature,temperatureFeel,unit }) => {
   const getTimeIn12HourFormat = (timeString) => {

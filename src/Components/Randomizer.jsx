@@ -4,6 +4,7 @@ import { setLocation } from "../State/Weatherslice"
 import LoadingBar from "react-top-loading-bar"
 import { useRef } from "react"
 // import "react-top-loading-bar/dist/index.css" // Import CSS file for react-top-loading-bar
+import React from "react"
 
 const Randomizer = () => {
   const dispatch = useDispatch()

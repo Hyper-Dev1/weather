@@ -4,6 +4,8 @@ import { useState, useRef } from "react"
 import { useDispatch } from "react-redux"
 import { setLocation } from "../State/Weatherslice"
 import LoadingBar from "react-top-loading-bar"
+import React from "react"
+
 
 const Search = () => {
   const [query, setQuery] = useState("")
