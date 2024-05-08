@@ -22,7 +22,7 @@ const HourlyForecastSwiper = () => {
     const fetchWeatherData = async () => {
       try {
         const response = await axios.get(
-          `http://api.weatherapi.com/v1/forecast.json?key=4a7fb94ad0db4a7eb7372029230712&q=${location}&days=1&aqi=yes&alerts=no`
+          `https://api.weatherapi.com/v1/forecast.json?key=4a7fb94ad0db4a7eb7372029230712&q=${location}&days=1&aqi=yes&alerts=no`
         )
         const data = response.data
         setWeatherData(data.forecast.forecastday[0].hour)

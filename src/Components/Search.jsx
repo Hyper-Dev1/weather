@@ -22,7 +22,7 @@ const Search = () => {
       }
 
       const response = await axios.get(
-        `http://api.weatherapi.com/v1/search.json?key=4a7fb94ad0db4a7eb7372029230712&q=${searchQuery}`
+        `https://api.weatherapi.com/v1/search.json?key=4a7fb94ad0db4a7eb7372029230712&q=${searchQuery}`
       )
       setResults(response.data)
       setShowSuggestions(true)
