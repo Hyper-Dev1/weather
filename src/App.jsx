@@ -1,4 +1,3 @@
-import React from "react"
 import Highlight from "./Components/Highlight"
 import Randomizer from "./Components/Randomizer"
 import Search from "./Components/Search"
