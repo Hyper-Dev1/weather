@@ -24,34 +24,62 @@ button {
     margin: 0;
 }
 
-@media only screen and (max-width: 1365px) {
+/*  phones, 600px and down */
+@media only screen and (max-width: 600px) {}
 
-    // Adjust styles for screens up to 1365px wide
+/* portrait tablets and large phones, 600px and up */
+@media only screen and (min-width: 600px) {}
 
+/* landscape tablets, 768px and up */
+@media only screen and (min-width: 768px) {}
+
+/* laptops/desktops, 992px and up */
+@media only screen and (min-width: 992px) {
+    main {
+        // width: 100%;
+        flex-direction: row;
+        // overflow: visible;
+
+        .sideBar {
+            flex: 1;
+            width: 30%;
+        }
+        .mainHighlights{
+            width: 70%;
+            flex: 3;
+        }
+    }
 }
 
-@media only screen and (max-width: 768px) {
-    // Adjust styles for screens up to 768px wide (e.g., tablets)
-
+/* large laptops and desktops, 1200px and up */
+@media only screen and (min-width: 1200px) {
 }
 
-@media only screen and (max-width: 480px) {
-    // Adjust styles for screens up to 480px wide (e.g., smartphones)
-
+/* 2K desktops, 1440px and up */
+@media only screen and (min-width: 1440px) {
 }
 
-@media only screen and (min-width: 1366px) and (max-width: 1920px) {
-    // Adjust styles for screens between 1366px and 1920px wide (e.g., 1080p monitors)
-
+/* 2K desktops, 1700px and up */
+@media only screen and (min-width: 1700px) {
 }
 
-@media only screen and (min-width: 1921px) and (max-width: 2560px) {
-    // Adjust styles for screens between 1921px and 2560px wide (e.g., 1440p monitors)
-
+/* QHD desktops, 1920px and up */
+@media only screen and (min-width: 1920px) {
+    :root{
+        font-size: 90%;
+    }
 }
 
-@media only screen and (min-width: 2561px) {
-    // Adjust styles for screens larger than 2560px wide (e.g., 4K monitors)
+/* 1440p desktops, 2048px and up */
+@media only screen and (min-width: 2048px) {
+    :root{
+        font-size: 90%;
+    }
+}
 
-
+/* 4k, 2460px and up */
+@media only screen and (min-width: 2460px) {
+    :root{
+        font-size: 90%;
+    }
 }

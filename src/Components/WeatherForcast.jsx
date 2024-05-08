@@ -3,9 +3,9 @@ import { useSelector } from "react-redux"
 import axios from "axios"
 import { Swiper, SwiperSlide } from "swiper/react"
 import "swiper/css" // Import Swiper CSS
-import "swiper/css/navigation" // Import Swiper Navigation CSS
-import "swiper/css/pagination" // Import Swiper Pagination CSS
-import "swiper/css/scrollbar" // Import Swiper Scrollbar CSS
+import "swiper/css/navigation"
+import "swiper/css/pagination"
+import "swiper/css/scrollbar"
 import SwiperCore from "swiper"
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules"
 import Carditem from "./Carditem"
@@ -40,28 +40,28 @@ const HourlyForecastSwiper = () => {
   }
 
   if (!weatherData) {
-  return (
-    <>
-      <div className="loading">
-        <div className="hrNavL">
-          <div className="degBtnL">
-            <button></button>
-            <button></button>
+    return (
+      <>
+        <div className="loading">
+          <div className="hrNavL">
+            <div className="degBtnL">
+              <button></button>
+              <button></button>
+            </div>
+          </div>
+          <div className="cardContL">
+            <div className="cardItemL"></div>
+            <div className="cardItemL"></div>
+            <div className="cardItemL"></div>
+            <div className="cardItemL"></div>
+            <div className="cardItemL"></div>
+            <div className="cardItemL"></div>
+            <div className="cardItemL"></div>
+            <div className="cardItemL"></div>
           </div>
         </div>
-        <div className="cardContL">
-          <div className="cardItemL"></div>
-          <div className="cardItemL"></div>
-          <div className="cardItemL"></div>
-          <div className="cardItemL"></div>
-          <div className="cardItemL"></div>
-          <div className="cardItemL"></div>
-          <div className="cardItemL"></div>
-          <div className="cardItemL"></div>
-        </div>
-      </div>
-    </>
-  )
+      </>
+    )
   }
 
   return (
@@ -92,21 +92,34 @@ const HourlyForecastSwiper = () => {
       </div>
       <div className="cardCont">
         <Swiper
-          spaceBetween={30}
+          spaceBetween={0}
           slidesPerView={8.1}
           breakpoints={{
+            300: {
+              slidesPerView: 2.5,
+            },
+            375: {
+              slidesPerView: 3,
+            },
             640: {
-              slidesPerView: 2,
-              spaceBetween: 20,
+              slidesPerView: 5,
             },
             768: {
-              slidesPerView: 8.1,
-              spaceBetween: 30,
+              slidesPerView: 6,
             },
             1024: {
-              slidesPerView: 8.1,
-              spaceBetween: 30,
+              slidesPerView: 6,
             },
+            1200: {
+              slidesPerView: 8.1,
+            },
+            // 1440: {
+            //   slidesPerView: 10,
+            // },
+            // 2560: {
+            //   slidesPerView: 10,
+            // },
+            
           }}
           // navigation
           // pagination={{ clickable: true }}
