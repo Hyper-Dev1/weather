@@ -14,6 +14,9 @@ import Carditem from "./Carditem"
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y])
 
 const HourlyForecastSwiper = () => {
+
+  const apiKey = import.meta.env.VITE_WEATHER_API_KEY
+
   const location = useSelector((state) => state.location.value)
   const [weatherData, setWeatherData] = useState(null)
   const [temperatureUnit, setTemperatureUnit] = useState("C")
@@ -22,7 +25,7 @@ const HourlyForecastSwiper = () => {
     const fetchWeatherData = async () => {
       try {
         const response = await axios.get(
-          `https://api.weatherapi.com/v1/forecast.json?key=4a7fb94ad0db4a7eb7372029230712&q=${location}&days=1&aqi=yes&alerts=no`
+          `https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${location}&days=1&aqi=yes&alerts=no`
         )
         const data = response.data
         setWeatherData(data.forecast.forecastday[0].hour)

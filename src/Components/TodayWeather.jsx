@@ -2,7 +2,6 @@ import { useEffect, useState } from "react"
 import { useSelector } from "react-redux"
 import axios from "axios"
 
-
 // Define DateTimeConverter component
 const DateTimeConverter = ({ dateTime }) => {
   const [day, setDay] = useState("")
@@ -42,6 +41,7 @@ const DateTimeConverter = ({ dateTime }) => {
 }
 
 const TodayWeather = () => {
+  const apiKey = import.meta.env.VITE_WEATHER_API_KEY
   const location = useSelector((state) => state.location.value)
   const [weatherData, setWeatherData] = useState(null)
 
@@ -49,7 +49,7 @@ const TodayWeather = () => {
     const fetchWeatherData = async () => {
       try {
         const response = await axios.get(
-          `https://api.weatherapi.com/v1/forecast.json?key=4a7fb94ad0db4a7eb7372029230712&q=${location}&days=1&aqi=yes&alerts=no`
+          `https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${location}&days=1&aqi=yes&alerts=no`
         )
         const data = response.data
         setWeatherData(data)
@@ -64,16 +64,16 @@ const TodayWeather = () => {
   }, [location])
 
   if (!weatherData) {
-  return (
-    <div className="loading">
-      <div className="todayWeatherL">
-        <div className="imgTodayWeatherL"></div>
-        <div className="weatherDescL"></div>
-        <hr />
-        <div className="weatherDescL"></div>
+    return (
+      <div className="loading">
+        <div className="todayWeatherL">
+          <div className="imgTodayWeatherL"></div>
+          <div className="weatherDescL"></div>
+          <hr />
+          <div className="weatherDescL"></div>
+        </div>
       </div>
-    </div>
-  )
+    )
   }
 
   return (

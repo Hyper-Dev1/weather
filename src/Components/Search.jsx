@@ -5,8 +5,9 @@ import { useDispatch } from "react-redux"
 import { setLocation } from "../State/Weatherslice"
 import LoadingBar from "react-top-loading-bar"
 
-
 const Search = () => {
+  const apiKey = import.meta.env.VITE_WEATHER_API_KEY
+
   const [query, setQuery] = useState("")
   const [results, setResults] = useState([])
   const [showSuggestions, setShowSuggestions] = useState(false)
@@ -22,7 +23,7 @@ const Search = () => {
       }
 
       const response = await axios.get(
-        `https://api.weatherapi.com/v1/search.json?key=4a7fb94ad0db4a7eb7372029230712&q=${searchQuery}`
+        `https://api.weatherapi.com/v1/search.json?key=${apiKey}&q=${searchQuery}`
       )
       setResults(response.data)
       setShowSuggestions(true)

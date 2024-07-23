@@ -73,6 +73,7 @@ const getWindStatusCategory = (windSpeed) => {
 }
 
 const Highlight = () => {
+  const apiKey = import.meta.env.VITE_WEATHER_API_KEY
   const location = useSelector((state) => state.location.value)
   const [weatherData, setWeatherData] = useState(null)
 
@@ -80,7 +81,7 @@ const Highlight = () => {
     const fetchWeatherData = async () => {
       try {
         const response = await axios.get(
-          `https://api.weatherapi.com/v1/forecast.json?key=4a7fb94ad0db4a7eb7372029230712&q=${location}&days=1&aqi=yes&alerts=no`
+          `https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${location}&days=1&aqi=yes&alerts=no`
         )
         const data = response.data
         setWeatherData(data)
